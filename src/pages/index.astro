@@ -57,10 +57,10 @@ const projects = (await getCollection("work"))
     <main class="wrapper stack gap-20 lg:gap-48">
       <section class="section with-background with-cta">
         <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Selected Work</h3>
+          <h3>Mes Réalisations</h3>
           <p>
-            Take a look below at some of my featured work for clients from the
-            past few years.
+            Découvrez ci-dessous quelques-uns de mes projets phares réalisés
+            pour des clients au cours des dernières années.
           </p>
         </header>
 
@@ -78,7 +78,7 @@ const projects = (await getCollection("work"))
 
         <div class="cta">
           <CallToAction href="/work/">
-            View All
+            Voir tout
             <Icon icon="arrow-right" size="1.2em" />
           </CallToAction>
         </div>
@@ -86,10 +86,10 @@ const projects = (await getCollection("work"))
 
       <section class="section with-background bg-variant">
         <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Mentions</h3>
+          <h3>Compétences Techniques</h3>
           <p>
-            I have been fortunate enough to receive praise for my work in
-            several publications. Take a look below to learn more.
+            Voici un aperçu des technologies et compétences que j'utilise pour
+            créer des solutions innovantes et efficaces.
           </p>
         </header>
 
@@ -97,14 +97,30 @@ const projects = (await getCollection("work"))
           <Grid variant="small">
             {
               [
-                "Medium",
-                "BuzzFeed",
-                "The Next Web",
-                "awwwards.",
-                "TechCrunch",
-              ].map((brand) => (
+                {
+                  tech: "CSS (Sass, TailwindCSS, etc)",
+                  logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+                },
+                {
+                  tech: "PHP (Symfony, Laravel, etc)",
+                  logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+                },
+                {
+                  tech: "JavaScript (React.js, Next.js, etc)",
+                  logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+                },
+                {
+                  tech: "SQL (MySQL, PostgreSQL, etc)",
+                  logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+                },
+                {
+                  tech: "Git (GitHub, GitLab, etc)",
+                  logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+                },
+              ].map((item) => (
                 <li class="mention-card">
-                  <p>{brand}</p>
+                  <img src={item.logo} alt={item.tech} class="tech-logo" />
+                  <p>{item.tech}</p>
                 </li>
               ))
             }
@@ -241,23 +257,32 @@ const projects = (await getCollection("work"))
 
   /* ====================================================== */
 
+  .tech-logo {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 0.75rem;
+  }
+
   .mention-card {
     display: flex;
-    height: 7rem;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     text-align: center;
     border: 1px solid var(--gray-800);
     border-radius: 1.5rem;
+    padding: 1rem;
     color: var(--gray-300);
     background: var(--gradient-subtle);
     box-shadow: var(--shadow-sm);
+  }
+  .mention-card p {
+    font-size: 1.05rem;
   }
 
   @media (min-width: 50em) {
     .mention-card {
       border-radius: 1.5rem;
-      height: 9.5rem;
+      padding: 1.5rem;
     }
   }
 </style>
