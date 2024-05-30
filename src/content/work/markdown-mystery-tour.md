@@ -1,35 +1,39 @@
 ---
-title: Markdown Mystery Tour
+title: Esthetica2B
 publishDate: 2020-03-02 00:00:00
-img: /assets/stock-1.jpg
-img_alt: Iridescent ripples of a bright blue and pink liquid
+img: /assets/esthetica2b.png
+img_alt: Capture d'écran du site Esthetica2B
 description: |
-  We designed a whodunnit-style game to introduce Markdown formatting. Suspense — suspicion — syntax!
+  Création d'un site web moderne et élégant pour Esthetica2B, un projet réalisé durant mon stage chez L'Agenza, mettant en avant des compétences en PHP et Sass.
 tags:
   - Design
   - Dev
-  - User Testing
+  - PHP
+  - Sass
 ---
 
-## Level-two heading
+## Introduction au Projet
 
-> Tell me and I forget. Teach me and I remember. Involve me and I learn.
+> " Dis-moi et j'oublie. Enseigne-moi et je me souviens. Implique-moi et j'apprends."
 
-Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+Ce projet a été réalisé durant mon stage chez L'Agenza, tout en poursuivant ma certification Bac +2. Il s'agissait de mon premier véritable projet en entreprise, où j'ai pu mettre en pratique mes compétences en développement web.
 
-Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.
+### Contexte et Objectifs
 
-### Level-three heading
+Le site Esthetica2B avait pour objectif de fournir une plateforme en ligne esthétique et fonctionnelle pour une entreprise de produits de beauté. Les principaux défis consistaient à créer un design attrayant tout en assurant une expérience utilisateur fluide.
 
-Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl pretium fusce.
+### Technologies Utilisées
 
-### Level-three heading
+- PHP : Pour la gestion de la logique côté serveur et l'intégration avec la base de données.
+- Sass : Pour la création de styles CSS modulaires et maintenables.
+- JavaScript : Pour des interactions dynamiques et une meilleure expérience utilisateur.
+- SQL : Pour la gestion et le stockage des données utilisateur.
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+#### Développement et Mise en Œuvre
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+Le développement du site a impliqué plusieurs étapes clés :
 
-#### Level-four heading
-
-- We noted this
-- And also this other point
+- Design et Maquettage : Création de maquettes haute fidélité en collaboration avec l'équipe de design.
+- Développement Frontend : Utilisation de Sass pour des styles avancés et réactifs.
+- Développement Backend : Implémentation de la logique métier et intégration de la base de données en PHP.
+- Tests et Optimisation : Validation de la fonctionnalité du site sur différents appareils et optimisation des performances.
