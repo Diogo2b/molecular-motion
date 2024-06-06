@@ -1,8 +1,8 @@
 import { c as createComponent, r as renderTemplate, g as renderComponent, m as maybeRenderHead } from '../astro_BhnhR_Wp.mjs';
 import 'kleur/colors';
-import { g as getCollection, $ as $$ContactCTA } from './__DC56CGxC.mjs';
+import { g as getCollection, $ as $$ContactCTA } from './__C1Ob1_7y.mjs';
 import { b as $$Hero, a as $$BaseLayout } from './404_nJR9KWHm.mjs';
-import { $ as $$Grid, a as $$PortfolioPreview } from './index_DKDPLEci.mjs';
+import { $ as $$Grid, a as $$PortfolioPreview } from './index_Bi9GWXSj.mjs';
 
 const $$Work = createComponent(async ($$result, $$props, $$slots) => {
   const projects = (await getCollection("work")).sort(
