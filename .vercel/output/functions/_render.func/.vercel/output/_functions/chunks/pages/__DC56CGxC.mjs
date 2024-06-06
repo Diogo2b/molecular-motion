@@ -204,7 +204,7 @@ createCollectionToGlobResultMap({
 });
 
 let lookupMap = {};
-lookupMap = {"work":{"type":"content","entries":{"ampc":"/src/content/work/ampc.md","va2":"/src/content/work/va2.md","esthetica2b":"/src/content/work/esthetica2b.md","nested/upalmentu":"/src/content/work/nested/upalmentu.md"}}};
+lookupMap = {"work":{"type":"content","entries":{"ampc":"/src/content/work/ampc.md","esthetica2b":"/src/content/work/esthetica2b.md","va2":"/src/content/work/va2.md","nested/upalmentu":"/src/content/work/nested/upalmentu.md"}}};
 
 function createGlobLookup(glob) {
 	return async (collection, lookupId) => {

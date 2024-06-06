@@ -1,6 +1,6 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, d as addAttribute, f as createAstro, e as renderSlot, g as renderComponent } from '../astro_BhnhR_Wp.mjs';
 import 'kleur/colors';
-import { g as getCollection, a as $$Pill, b as $$CallToAction, $ as $$ContactCTA } from './__C1Ob1_7y.mjs';
+import { g as getCollection, a as $$Pill, b as $$CallToAction, $ as $$ContactCTA } from './__DC56CGxC.mjs';
 import { $ as $$Icon, b as $$Hero, a as $$BaseLayout } from './404_nJR9KWHm.mjs';
 import 'clsx';
 /* empty css                          */
