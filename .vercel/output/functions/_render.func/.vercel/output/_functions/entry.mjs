@@ -1,5 +1,9 @@
 import { renderers } from './renderers.mjs';
+<<<<<<< HEAD
 import { l as levels, g as getEventPrefix, L as Logger, A as AstroIntegrationLogger, manifest } from './manifest_C8QHLiW-.mjs';
+=======
+import { l as levels, g as getEventPrefix, L as Logger, A as AstroIntegrationLogger, manifest } from './manifest_b3M_kSmu.mjs';
+>>>>>>> parent of 95fdaf4 (fix vercel)
 import { e as appendForwardSlash, j as joinPaths, t as trimSlashes, f as fileExtension, s as slash, p as prependForwardSlash, g as removeTrailingForwardSlash, h as collapseDuplicateSlashes } from './chunks/astro/assets-service_ChLCuDcM.mjs';
 import { R as ROUTE_TYPE_HEADER, q as REROUTE_DIRECTIVE_HEADER, A as AstroError, t as ResponseSentError, v as MiddlewareNoDataOrNextCalled, w as MiddlewareNotAResponse, G as GetStaticPathsRequired, x as InvalidGetStaticPathsReturn, y as InvalidGetStaticPathsEntry, z as GetStaticPathsExpectedParams, B as GetStaticPathsInvalidRouteParam, P as PageNumberParamNotFound, D as DEFAULT_404_COMPONENT, N as NoMatchingStaticPathFound, C as PrerenderDynamicEndpointPathCollide, H as ReservedSlotName, J as renderSlotToString, K as renderJSX, O as chunkToString, Q as isRenderInstruction, S as LocalsNotAnObject, T as clientLocalsSymbol, V as clientAddressSymbol$1, W as PrerenderClientAddressNotAvailable, X as ClientAddressNotAvailable, Y as StaticClientAddressNotAvailable, Z as renderPage, _ as renderEndpoint, $ as ASTRO_VERSION, a0 as responseSentSymbol$1, a1 as AstroResponseHeadersReassigned, a2 as REROUTABLE_STATUS_CODES } from './chunks/astro_BhnhR_Wp.mjs';
 import { serialize, parse } from 'cookie';
@@ -2323,7 +2327,11 @@ const _manifest = Object.assign(manifest, {
     middleware: onRequest
 });
 const _args = {
+<<<<<<< HEAD
     "middlewareSecret": "cd567d15-0498-4734-8588-8b3965cd041b",
+=======
+    "middlewareSecret": "5eb5a90c-814b-4a96-9323-12409825bbe0",
+>>>>>>> parent of 95fdaf4 (fix vercel)
     "skewProtection": false
 };
 const _exports = createExports(_manifest, _args);
