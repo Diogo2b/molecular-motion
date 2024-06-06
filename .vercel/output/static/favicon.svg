@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+    <style>
+        .outer { fill: none; stroke: #946EB4; stroke-width: 8; }
+        .details { fill: none; stroke: #946EB4; stroke-width: 6; stroke-linecap: round; }
+        @media (prefers-color-scheme: dark) {
+            .outer { stroke: #FFF; }
+            .details { stroke: #FFF; }
+        }
+    </style>
+    <!-- Letra D -->
+    <path class="outer" d="M16 16 A48 48 0 0 1 64 64 A48 48 0 0 1 16 112 Z" />
+    <path class="details" d="M56 48 L72 48" />
+    <path class="details" d="M56 64 L76 64" />
+    <path class="details" d="M56 80 L72 80" />
+    <!-- Letra F -->
+    <path class="outer" d="M80 16 L80 112" />
+    <path class="outer" d="M80 16 L112 16" />
+    <path class="outer" d="M80 64 L104 64" />
+</svg>
