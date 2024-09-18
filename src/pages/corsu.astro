@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+  title="À propositu | Diogo Ferreira"
+  description="À propositu di Diogo Ferreira è di u so percorsu."
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="À propositu"
+        tagline="Grazie per a vostra visita. Leghjite quì sottu per sapè di più annantu à mè è u me percorsu."
+      >
+        <img
+          width="1553"
+          height="873"
+          src="/assets/at-work.jpg"
+          alt="Diogo Ferreira à u travagliu cù un culleghju"
+        />
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Percorsu</h2>
+        <div class="content">
+          <p>
+            Appassiunatu d'informatica dipoi a me zitellina, aghju sceltu di fà
+            di a me passione una ricunversione prufessiunale spicializendumi in
+            u sviluppu web è d'applicazioni. Dopu à avè finitu u me certificatu
+            di sviluppatore web cù un diploma di livellu Bac+2, è avendu
+            iniziatu un diploma livellu Bac +3, sò in cerca di un postu di
+            cuncepitore/sviluppatore web (in alternanza da avà o CDD/CDI à partesi
+            di settembre 2024). Motivu, curiosu è rigorevule, sò prontu à
+            affruntà novi sfidi è à cuntribuisce à u successu di a vostra
+            impresa.
+          </p>
+          <p>
+            Duranti u me percorsu prufessiunale, aghju avutu l'uppurtunità di
+            travaglià cù diverse tecnulugie cum'è JavaScript, PHP, SQL, è CSS.
+            A mo manera di travaglià, centrata annantu à a satisfaczione di u cliente, è a mo
+            capacità d'adattà mi prestu à e nuove tecnulugie m'hà permessu di realizà
+            parechji prughjetti cumplessi. Sò sempre in cerca di nuove opportunità
+            per innovà è migliurà e mo cumpetenze.
+          </p>
+          <p>
+            Fora di u travagliu, sò appassiunatu di l'informatica è e tendenze
+            tecnulogiche, esplorendu costantemente novi sviluppi in vari
+            duminii.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Educazione</h2>
+        <div class="content">
+          <p>Cuncepitore d’applicazioni Web è mobili (Bac+3 - in corsu)</p>
+          <p>Sviluppatore d’applicazioni Web è mobili (Bac+2)</p>
+          <p>Bac Pro SEID (informatica è elettronica) - 2009</p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Cumpetenze</h2>
+        <div class="content">
+          <p>
+            Tecnhulugie: JavaScript, React.js, Next.js, PHP, Symfony, SQL, CSS, Git
+          </p>
+          <p>Mobile: Qualche sperienze cù Swift, Kotlin è Flutter</p>
+          <p>
+            Soft Skills: Spìritu di squadra, curiosu, dinamicu, urganizatu, à
+            l'ascolta
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
