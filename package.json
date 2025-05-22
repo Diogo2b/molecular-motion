@@ -19,6 +19,8 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "penthouse": "^2.3.3"
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "penthouse": "^2.3.3",
+    "postcss": "^8.5.3"
   }
 }
