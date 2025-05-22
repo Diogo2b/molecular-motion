@@ -26,12 +26,7 @@ const { title, description } = Astro.props;
       <Footer />
     </div>
 
-    <script>
-      // Add “loaded” class once the document has completely loaded.
-      addEventListener("load", () =>
-        document.documentElement.classList.add("loaded")
-      );
-    </script>
+    <script src="/scripts/init.js" defer></script>
 
     <style>
       :root {
