@@ -17,6 +17,11 @@ const { title, description } = Astro.props;
 
 <html lang="fr">
   <head>
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/backgrounds/bg-main-light.svg"
+    />
     <MainHead title={title} description={description} />
   </head>
   <body>
