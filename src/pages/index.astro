@@ -45,9 +45,12 @@ const projects = (await getCollection("work"))
 
         <img
           alt="Diogo Ferreira avec des lunettes rondes et une chemise bleue à pois, souriant légèrement dans un bureau éclairé par la lumière naturelle"
-          width="480"
-          height="620"
           src="/assets/portrait.webp"
+          width="300"
+          height="400"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
       </header>
 
