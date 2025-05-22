@@ -12,6 +12,9 @@
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "astro": "^5.4.2",
+    "globby": "^14.1.0",
+    "imagemin": "^9.0.1",
+    "imagemin-webp": "^8.0.0",
     "typescript": "^5.4.5"
   }
 }
