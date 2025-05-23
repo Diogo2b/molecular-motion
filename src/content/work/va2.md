@@ -2,6 +2,7 @@
 title: VA2
 publishDate: 2024-04-22  00:00:00
 img: /assets/va2.webp
+externalUrl: https://www.va2-corsica.com/
 img_alt: Capture d'écran du site VA2
 description: |
   Développement d'un site web dynamique pour VA2, réalisé durant mon année de Bac +3 chez Les Éditions Corses, mettant en avant des compétences en React.js, Next.js, Prisma, GSAP et Swiper.

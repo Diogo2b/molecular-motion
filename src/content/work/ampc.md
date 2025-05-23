@@ -2,6 +2,7 @@
 title: AMPC
 publishDate: 2024-05-30 00:00:00
 img: /assets/ampc.webp
+externalUrl: https://ampc-plomberie.com/
 img_alt: Capture d'écran du site AMPC Plomberie
 description: |
   Développement d'un site web professionnel pour AMPC Plomberie, réalisé durant mon année de Bac +3 chez Les Éditions Corses, mettant en avant des compétences en React.js, Next.js, Animations .

@@ -2,6 +2,7 @@
 title: U Palmentu
 publishDate: 2023-03-04 00:00:00
 img: /assets/upalmentu.webp
+externalUrl: https://www.upalmentu.com/
 img_alt: Capture d'écran du site Upalmentu
 description: |
   Développement d'un site web pour Upalmentu, réalisé durant mon alternance chez Les Éditions Corses, sous la supervision de Matthieu DE VUYST. Ce projet met en avant des compétences en Symfony et frontend.

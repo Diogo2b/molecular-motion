@@ -2,6 +2,7 @@
 title: Esthetica2B
 publishDate: 2020-03-02 00:00:00
 img: /assets/esthetica2b.webp
+externalUrl: https://www.esthetica2b.com/
 img_alt: Capture d'écran du site Esthetica2B
 description: |
   Création d'un site web moderne et élégant pour Esthetica2B, un projet réalisé durant mon stage chez L'Agenza, mettant en avant des compétences en PHP et Sass.
