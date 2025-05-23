@@ -1,25 +1,46 @@
 ---
 import "../styles/global.css";
+
 interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
+  title?: string;
+  description?: string;
+  image?: string;
 }
 
 const {
-  title = "Diogo Ferreira: Mon portfolio",
+  title = "Diogo Ferreira – Mon portfolio",
   description = "The personal site of Diogo Ferreira",
-} = Astro.props;
+  image = "/assets/og/home-preview.png",
+} = Astro.props as Props;
+
+const url = `https://diogo.corsica${Astro.url.pathname}`;
 ---
 
 <meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
 <meta name="viewport" content="width=device-width" />
-<meta name="generator" content={Astro.generator} />
+<meta name="description" content={description} />
+
 <title>{title}</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Diogo.corsica" />
+<meta property="og:url" content={url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<link rel="canonical" href={url} />
+
 <script is:inline>
-  // This code is inlined in the head to make dark mode instant & blocking.
+  // Dark mode inline script
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
@@ -32,7 +53,6 @@ const {
   document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
 
   if (typeof localStorage !== "undefined") {
-    // Watch the document element and persist user preference when it changes.
     const observer = new MutationObserver(() => {
       const isDark = document.documentElement.classList.contains("theme-dark");
       localStorage.setItem("theme", isDark ? "dark" : "light");
