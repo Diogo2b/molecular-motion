@@ -16,7 +16,9 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<html lang="fr">
+<script src="/scripts/init.js" defer></script>
+
+<html lang="fr" class="bg-noise loaded">
   <head>
     <!-- 1. Pré-carrega o SVG do LCP -->
     <link
@@ -56,6 +58,11 @@ const { title, description } = Astro.props;
     </div>
 
     <script src="/scripts/init.js" defer></script>
+    <script is:inline>
+      window.addEventListener("load", () => {
+        document.documentElement.classList.add("bg-noise", "loaded");
+      });
+    </script>
 
     <style>
       @media (min-width: 50em) {
