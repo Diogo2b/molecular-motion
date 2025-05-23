@@ -28,6 +28,13 @@ const { title, description } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Public+Sans&display=swap"
       rel="stylesheet"
     />
+<link
+  rel="preload"
+  as="image"
+  href="/assets/portrait.webp"
+  imagesrcset="/assets/portrait-300w.webp 300w, /assets/portrait.webp 400w"
+  imagesizes="(max-width: 768px) 100vw, 300px"
+/>
 
     <!-- 3. Inline do Critical CSS -->
     <style is:inline>
