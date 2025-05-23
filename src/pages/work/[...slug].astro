@@ -32,7 +32,9 @@ const { Content } = await entry.render();
     <div class="stack gap-15">
       <header>
         <div class="wrapper stack gap-2">
-          <a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
+          <a class="back-link" href="/work/"
+            ><Icon icon="arrow-left" /> Projets</a
+          >
           <Hero title={entry.data.title} align="start">
             <div class="details">
               <div class="tags">
@@ -79,13 +81,41 @@ const { Content } = await entry.render();
 </BaseLayout>
 
 <style>
-  header {
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--gray-800);
+  /* Header volta a ser normal (não sticky) */
+  header,
+  .wrapper,
+  .stack {
+    overflow: visible !important;
+    transform: none !important;
   }
-
+  /* Oculta no mobile */
   .back-link {
     display: none;
+  }
+
+  /* Exibe e fixa em desktop */
+  @media (min-width: 50em) {
+    .back-link {
+      display: block;
+      position: fixed;
+      top: 8rem; /* aumente este valor para descer mais ainda */
+      left: 1rem; /* ajuste lateral se quiser */
+      z-index: 10000;
+      pointer-events: auto;
+
+      background: var(--background);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+
+      text-decoration: 1px solid underline transparent;
+      text-underline-offset: 0.25em;
+      transition: text-decoration-color var(--theme-transition);
+      color: inherit;
+    }
+    .back-link:hover,
+    .back-link:focus {
+      text-decoration-color: currentColor;
+    }
   }
 
   .details {
@@ -96,12 +126,15 @@ const { Content } = await entry.render();
     justify-content: space-between;
     align-items: center;
   }
-
   .tags {
-    display: flex;
-    gap: 0.5rem;
+    display: none;
   }
-
+  @media (min-width: 50em) {
+    .tags {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
   .description {
     font-size: var(--text-lg);
     max-width: 54ch;
@@ -141,26 +174,7 @@ const { Content } = await entry.render();
     color: var(--gray-0);
   }
 
-  .back-link,
-  .content :global(a) {
-    text-decoration: 1px solid underline transparent;
-    text-underline-offset: 0.25em;
-    transition: text-decoration-color var(--theme-transition);
-  }
-
-  .back-link:hover,
-  .back-link:focus,
-  .content :global(a:hover),
-  .content :global(a:focus) {
-    text-decoration-color: currentColor;
-  }
-
   @media (min-width: 50em) {
-    .back-link {
-      display: block;
-      align-self: flex-start;
-    }
-
     .details {
       flex-direction: row;
       gap: 2.5rem;
