@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import MainHead from "../components/MainHead.astro";
 import CallToAction from "../components/CallToAction.astro";
 import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
@@ -19,19 +18,16 @@ const projects = (await getCollection("work"))
 // Frontmatter para meta tags
 export const frontmatter = {
   title: "Olá, je m'appelle Diogo – Portfolio",
-  description: "Développement web en Haute-Corse, solutions Astro.js & Vercel.",
+  description: "Développement web en Haute-Corse, soluções Astro.js & Vercel.",
   image: "/assets/og/home-preview.png",
 };
 ---
 
-<BaseLayout>
-  <!-- Insere aqui as meta tags OG/Twitter -->
-  <MainHead
-    title={frontmatter.title}
-    description={frontmatter.description}
-    image={frontmatter.image}
-  />
-
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  image={frontmatter.image}
+>
   <div class="stack gap-20 lg:gap-48">
     <div class="wrapper stack gap-8 lg:gap-20">
       <header class="hero">
@@ -72,7 +68,7 @@ export const frontmatter = {
           <h3>Mes Réalisations</h3>
           <p>
             Découvrez ci-dessous quelques-uns de mes projets phares réalisés
-            pour des clients au cours des dernières années.
+            para clientes nos últimos anos.
           </p>
         </header>
 
@@ -100,8 +96,8 @@ export const frontmatter = {
         <header class="section-header stack gap-2 lg:gap-4">
           <h3>Compétences Techniques</h3>
           <p>
-            Voici un aperçu des technologies et compétences que j'utilise pour
-            créer des solutions innovantes et efficaces.
+            Voici un aperçu des tecnologias e habilidades que uso para criar
+            soluções inovadoras.
           </p>
         </header>
 
@@ -161,3 +157,44 @@ export const frontmatter = {
     <ContactCTA />
   </div>
 </BaseLayout>
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .roles {
+    display: none;
+  }
+
+  .hero img {
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (min-width: 50em) {
+    .hero {
+      display: grid;
+      grid-template-columns: 6fr 4fr;
+      padding-inline: 2.5rem;
+      gap: 3.75rem;
+    }
+
+    .roles {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .hero img {
+      aspect-ratio: 3 / 4;
+      border-radius: 4.5rem;
+      object-fit: cover;
+    }
+  }
+</style>
