@@ -19,7 +19,15 @@ import Hero from "../components/Hero.astro";
           width="1553"
           height="873"
           src="/assets/at-work.webp"
+          srcset="
+    /assets/at-work-800w.webp 800w,
+    /assets/at-work.webp 1553w
+  "
+          sizes="(max-width: 768px) 100vw, 800px"
           alt="Diogo Ferreira au travail avec un collègue"
+          fetchpriority="high"
+          decoding="async"
+          loading="eager"
         />
       </Hero>
 

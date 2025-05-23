@@ -44,13 +44,18 @@ const projects = (await getCollection("work"))
         </Hero>
 
         <img
-          alt="Diogo Ferreira avec des lunettes rondes et une chemise bleue à pois, souriant légèrement dans un bureau éclairé par la lumière naturelle"
           src="/assets/portrait.webp"
+          srcset="
+    /assets/portrait-300w.webp 300w,
+    /assets/portrait.webp 400w
+  "
+          sizes="(max-width: 768px) 100vw, 300px"
           width="300"
           height="400"
-          loading="eager"
+          alt="Diogo Ferreira avec des lunettes rondes et une chemise bleue à pois..."
           fetchpriority="high"
           decoding="async"
+          loading="eager"
         />
       </header>
 
@@ -150,7 +155,14 @@ const projects = (await getCollection("work"))
                 },
               ].map((item) => (
                 <li class="mention-card">
-                  <img src={item.logo} alt={item.tech} class="tech-logo" />
+                  <img
+                    src={item.logo}
+                    alt={item.tech}
+                    class="tech-logo"
+                    loading="lazy"
+                    decoding="async"
+                  />
+
                   <p>{item.tech}</p>
                 </li>
               ))

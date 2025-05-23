@@ -4,13 +4,7 @@ import path from "path";
 import { globby } from "globby";
 
 const inputDirs = ["./public/assets/", "./public/assets/backgrounds/"];
-
-const outputBase = "./public/assets/optimized";
-
-const widthMap = {
-  "portrait.webp": 300,
-  default: 500,
-};
+const outputBase = "./public/assets";
 
 const run = async () => {
   for (const dir of inputDirs) {
@@ -18,15 +12,16 @@ const run = async () => {
 
     for (const file of files) {
       const inputPath = path.join(dir, file);
-      const relativeSubdir = path.relative("./public/assets", dir);
-      const outputDir = path.join(outputBase, relativeSubdir);
-      const outputPath = path.join(outputDir, file);
+      const filename = path.basename(file, ".webp");
+      const outputDir = path.join(outputBase);
 
-      const width = widthMap[file] || widthMap["default"];
+      // Escolher a largura com base no nome do ficheiro
+      let width = 500;
+      if (filename.includes("portrait")) width = 300;
+      else if (filename.includes("at-work")) width = 800;
 
-      if (!fs.existsSync(outputDir)) {
-        fs.mkdirSync(outputDir, { recursive: true });
-      }
+      const outputName = `${filename}-${width}w.webp`;
+      const outputPath = path.join(outputDir, outputName);
 
       try {
         const buffer = await sharp(inputPath)
@@ -35,20 +30,14 @@ const run = async () => {
           .toBuffer();
 
         await fs.promises.writeFile(outputPath, buffer);
-        console.log(`✅ ${file} otimizado → ${outputPath}`);
+        console.log(`✅ ${file} → ${outputName}`);
       } catch (err) {
         console.error(`❌ Erro ao otimizar ${file}:`, err.message);
       }
     }
   }
 
-  console.log(
-    "\n📂 As imagens otimizadas foram guardadas em: public/assets/optimized"
-  );
-  console.log(
-    "✂️  Vai ao Explorador do Windows e corta/cola para os respetivos diretórios de origem com o detalhe de pasta por exemplo 'backgrounds/optimized'"
-  );
-  console.log("💡 Depois faz o build e push normalmente.");
+  console.log("\n🎉 Todas as imagens foram redimensionadas automaticamente.");
 };
 
 run();
