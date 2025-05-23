@@ -1,33 +1,17 @@
 ---
-// Learn about using Astro layouts:
-// https://docs.astro.build/en/core-concepts/layouts/
-
-// Component Imports
 import "../styles/global.css";
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import bgMainLight from "../assets/backgrounds/bg-main-light.svg";
-import bgMainLight1440w from "../assets/backgrounds/bg-main-light-1440w.webp";
-import bgMainDark1440w from "../assets/backgrounds/bg-main-dark-1440w.webp";
-import bgSubtle1Light1440w from "../assets/backgrounds/bg-subtle-1-light-1440w.webp";
-import bgSubtle2Light1440w from "../assets/backgrounds/bg-subtle-2-light-1440w.webp";
-import bgFooterLight1440w from "../assets/backgrounds/bg-footer-light-1440w.webp";
-import bgSubtle1Dark1440w from "../assets/backgrounds/bg-subtle-1-dark-1440w.webp";
-import bgSubtle2Dark1440w from "../assets/backgrounds/bg-subtle-2-dark-1440w.webp";
-import bgFooterDark1440w from "../assets/backgrounds/bg-footer-dark-1440w.webp";
-import noise from "../assets/backgrounds/noise.webp";
-interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
-}
 
+interface Props {
+  title?: string;
+  description?: string;
+}
 const { title, description } = Astro.props;
 ---
 
-<script src="/scripts/init.js" defer></script>
-
-<html lang="fr" class="bg-noise loaded">
+<html lang="fr">
   <head>
     <!-- 1. Pré-carrega o SVG do LCP -->
     <link
@@ -45,44 +29,55 @@ const { title, description } = Astro.props;
       rel="stylesheet"
     />
 
-    <!-- 3. Inline do Critical CSS (mantido) -->
+    <!-- 3. Inline do Critical CSS -->
     <style is:inline>
-      /* 🔥 Cola aqui TODO o conteúdo do critical.css como já fizeste */
-      /* Este conteúdo já está bem copiado acima, por isso não repito aqui */
+      /* Cola aqui TODO o conteúdo do critical.css */
     </style>
 
-    <!-- 4. CSS Global carregado corretamente -->
-    <link rel="preload" as="style" href="/_astro/about.B-ATDIEY.css" />
-    <link rel="stylesheet" href="/_astro/about.B-ATDIEY.css" />
-
-    <!-- 5. Meta, título e SEO -->
+    <!-- 4. Meta, título e SEO -->
     <MainHead title={title} description={description} />
   </head>
 
-  <body>
-    <div class="stack backgrounds">
-      <Nav />
-      <slot />
-      <Footer />
-    </div>
-
-    <script src="/scripts/init.js" defer></script>
-    <script is:inline>
-      window.addEventListener("load", () => {
-        document.documentElement.classList.add("bg-noise", "loaded");
-      });
-    </script>
-
-    <style>
+  <body class="bg-noise loaded">
+    <!-- 5. Definição das variáveis de background e ruído -->
+    <style is:inline>{`
+      :root {
+        --_placeholder-bg: linear-gradient(transparent, transparent);
+        --bg-image-main: url("/assets/backgrounds/bg-main-light-800w.webp");
+        --bg-image-main-curves: url("/assets/backgrounds/bg-main-light.svg");
+        --bg-image-subtle-1: var(--_placeholder-bg);
+        --bg-image-subtle-2: var(--_placeholder-bg);
+        --bg-image-footer: var(--_placeholder-bg);
+        --bg-svg-blend-mode: overlay;
+        --bg-blend-mode: darken;
+        --bg-gradient-size: calc(1.68 * 100%);
+      }
+      :root.theme-dark {
+        --bg-image-main: url("/assets/backgrounds/bg-main-dark-800w.webp");
+        --bg-image-main-curves: url("/assets/backgrounds/bg-main-dark.svg");
+        --bg-blend-mode: lighten;
+        --bg-svg-blend-mode: darken;
+      }
       @media (min-width: 50em) {
         :root {
-          --bg-scale: 1;
           --bg-image-main: url("/assets/backgrounds/bg-main-light-1440w.webp");
+          --bg-gradient-size: 100%;
         }
         :root.theme-dark {
           --bg-image-main: url("/assets/backgrounds/bg-main-dark-1440w.webp");
         }
-
+      }
+      :root.loaded {
+        --bg-image-subtle-1: url("/assets/backgrounds/bg-subtle-1-light-800w.webp");
+        --bg-image-subtle-2: url("/assets/backgrounds/bg-subtle-2-light-800w.webp");
+        --bg-image-footer: url("/assets/backgrounds/bg-footer-light-800w.webp");
+      }
+      :root.loaded.theme-dark {
+        --bg-image-subtle-1: url("/assets/backgrounds/bg-subtle-1-dark-800w.webp");
+        --bg-image-subtle-2: url("/assets/backgrounds/bg-subtle-2-dark-800w.webp");
+        --bg-image-footer: url("/assets/backgrounds/bg-footer-dark-800w.webp");
+      }
+      @media (min-width: 50em) {
         :root.loaded {
           --bg-image-subtle-1: url("/assets/backgrounds/bg-subtle-1-light-1440w.webp");
           --bg-image-subtle-2: url("/assets/backgrounds/bg-subtle-2-light-1440w.webp");
@@ -94,26 +89,27 @@ const { title, description } = Astro.props;
           --bg-image-footer: url("/assets/backgrounds/bg-footer-dark-1440w.webp");
         }
       }
-
-      :root.bg-noise .backgrounds {
-        background-image:
-          url("/assets/backgrounds/noise.webp"), var(--bg-image-footer),
-          var(--bg-image-main-curves), var(--bg-image-main), var(--gray-999);
-
+      .backgrounds {
+        min-height: 100%;
+        isolation: isolate;
+        background:
+          url("/assets/backgrounds/noise.webp") bottom center/var(--bg-gradient-size) no-repeat,
+          var(--bg-image-footer) bottom center/var(--bg-gradient-size) no-repeat,
+          var(--bg-image-main-curves) top center/var(--bg-gradient-size) no-repeat,
+          var(--bg-image-main) top center/var(--bg-gradient-size) no-repeat,
+          var(--gray-999);
         background-blend-mode:
-          overlay, var(--bg-blend-mode), var(--bg-svg-blend-mode), normal,
-          normal;
+          overlay, var(--bg-blend-mode), var(--bg-svg-blend-mode), normal, normal;
       }
+    `}</style>
 
-      @media (forced-colors: active) {
-        .backgrounds {
-          background: none;
-          background-blend-mode: none;
-          --bg-gradient-size: none;
-        }
-      }
-    </style>
+    <div class="stack backgrounds">
+      <Nav />
+      <slot />
+      <Footer />
+    </div>
 
+    <!-- 6. Script para garantir que as classes são aplicadas -->
     <script is:inline>
       window.addEventListener("load", () => {
         document.documentElement.classList.add("bg-noise", "loaded");
