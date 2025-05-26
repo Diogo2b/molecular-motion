@@ -6,7 +6,7 @@ export default async function handler(_req, res) {
   const READ_URL = `${API_URL}/latest`;
 
   try {
-    // Buscar dados atuais
+    // Ler o valor atual do JSONBin
     const read = await fetch(READ_URL, {
       headers: {
         "X-Master-Key": API_KEY,
