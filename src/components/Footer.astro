@@ -20,14 +20,11 @@ const currentYear = new Date().getFullYear();
   </div>
 </footer>
 
-<!-- Script para buscar o contador em JSON -->
 <script is:inline type="module">
-  fetch(
-    "https://hits.seeyoufarm.com/api/count/incr?url=https%3A%2F%2Fdiogo.corsica"
-  )
+  fetch("/api/visitas")
     .then((r) => r.json())
     .then((data) => {
-      document.getElementById("visit-count").textContent = data.value;
+      document.getElementById("visit-count").textContent = data.visits;
     })
     .catch(() => {
       document.getElementById("visit-count").textContent = "–";
