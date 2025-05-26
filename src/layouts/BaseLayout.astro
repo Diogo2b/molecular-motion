@@ -18,8 +18,9 @@ const { title, description, image } = Astro.props as Props;
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BW59KRZV4Y"></script>
+<!-- Google Analytics -->
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BW59KRZV4Y"></script>
+
 <script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
