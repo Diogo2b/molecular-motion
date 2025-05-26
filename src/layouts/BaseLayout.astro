@@ -15,20 +15,22 @@ const { title, description, image } = Astro.props as Props;
 <html lang="fr">
   <head>
     <!-- Preconnect & DNS Prefetch -->
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-<!-- Google Analytics -->
-<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BW59KRZV4Y"></script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BW59KRZV4Y"></script>
+    <script>
+      // @ts-ignore: dataLayer pode não estar declarado
+      window.dataLayer = window.dataLayer || [];
+      // @ts-ignore: gtag não existe no tipo global
+      function gtag(...args) {
+        window.dataLayer.push(args);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-BW59KRZV4Y');
+    </script>
 
-<script is:inline>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BW59KRZV4Y', {
-    page_path: window.location.pathname,
-  });
-</script>
     <!-- 1. Pré-carrega o SVG do LCP -->
     <link
       rel="preload"
