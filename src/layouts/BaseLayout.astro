@@ -21,15 +21,20 @@ const { title, description, image } = Astro.props as Props;
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BW59KRZV4Y"></script>
     <script>
-      // @ts-ignore: dataLayer pode não estar declarado
-      window.dataLayer = window.dataLayer || [];
-      // @ts-ignore: gtag não existe no tipo global
-      function gtag(...args) {
-        window.dataLayer.push(args);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-BW59KRZV4Y');
-    </script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(...args: any[]) {
+          window.dataLayer.push(args);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-BW59KRZV4Y');
+
+        // Forçar page_view manualmente
+        gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: window.location.pathname
+        });
+</script>
 
     <!-- 1. Pré-carrega o SVG do LCP -->
     <link
