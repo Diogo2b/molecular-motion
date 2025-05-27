@@ -1,8 +1,14 @@
 ---
-import Hero from '../components/Hero.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Not Found" description="404 Error — this page was not found - Page inexistante">
-	<Hero title="Page Not Found" tagline="Not found" />
+<BaseLayout
+  title="Page introuvable"
+  description="Erreur 404 — Cette page s'est perdue en mer"
+>
+  <Hero
+    title="Oups ! On a un problème..."
+    tagline="Cette page a disparu comme une chaussette dans la machine à laver."
+  />
 </BaseLayout>
